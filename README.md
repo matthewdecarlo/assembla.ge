@@ -1,2 +1,2 @@
 # assembla.ge
-A thoughtful micro messaging web-app.
+A thoughtful micro-blogging web-app.
