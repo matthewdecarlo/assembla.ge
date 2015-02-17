@@ -5,4 +5,11 @@ require 'faker'
                password: "1")
 end
 
-Following.create!(followee_id: 1, follower_id: 1)
+# Seed check to verify that user cannot follow self
+# Following.create!(followee_id: 1, follower_id: 1)
+
+Post.create!(poster_id: 1, content: "#SomethingAwesome is Coming...")
+
+Tagging.create!(post_id: 1, tag_id: 1)
+
+Tag.create(content: "SomethingAwesome")
