@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
     has_many :tags, through: :taggings
     has_many :followings, foreign_key: :followee_id
     has_many :followings, foreign_key: :follower_id
-    has_many :followers, through: :followings#, foreign_key: :followee_id
-    has_many :followees, through: :followings#, foreign_key: :follower_id
+    has_many :followers, through: :followings
+    has_many :followees, through: :followings
 
     validates_associated :followers, :followees
 
