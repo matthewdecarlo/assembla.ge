@@ -6,7 +6,7 @@ require 'faker'
 end
 
 # Seed check to verify that user cannot follow self
-# Following.create!(followee_id: 1, follower_id: 1)
+Following.create!(originator_id: 1, follower_id: 1)
 
 Following.create!(originator_id: 2, follower_id: 1)
 Following.create!(originator_id: 1, follower_id: 2)
