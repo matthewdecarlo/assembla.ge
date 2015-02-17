@@ -1,12 +1,15 @@
 require 'faker'
 
+User.create(name: "Miriam", username: "m", password:"123")
+
 5.times do
-  User.create!( username: Faker::Internet.user_name,
-               password: "1")
+  User.create!(name: Faker::Name.name,
+               username: Faker::Internet.user_name,
+               password: "123")
 end
 
 # Seed check to verify that user cannot follow self
-Following.create!(originator_id: 1, follower_id: 1)
+# Following.create!(originator_id: 1, follower_id: 1)
 
 Following.create!(originator_id: 2, follower_id: 1)
 Following.create!(originator_id: 1, follower_id: 2)

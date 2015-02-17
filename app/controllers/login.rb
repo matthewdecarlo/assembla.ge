@@ -1,9 +1,11 @@
 get '/login' do 
-  erb :login
+  erb :'auth/login'
 end
 
 post '/login' do
-  user = User.find_by(username: params[:user]["name"]).try(:authentiate, params[:user]["password"])
+  user = User.find_by(username: params[:user][:username]).try(:authenticate, params[:user][:password])
+
+ p user
 
   if user 
     session[:user_id] = user.id
