@@ -9,6 +9,8 @@ end
 # Following.create!(followee_id: 1, follower_id: 1)
 
 Following.create!(originator_id: 2, follower_id: 1)
+Following.create!(originator_id: 1, follower_id: 2)
+Following.create!(originator_id: 3, follower_id: 4)
 
 Post.create!(poster_id: 1, content: "#SomethingAwesome is Coming...")
 
