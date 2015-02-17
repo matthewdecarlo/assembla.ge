@@ -1,6 +1,3 @@
-![assemla.ge schema](schema.png)
-
-```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- SQL XML created by WWW SQL Designer, http://code.google.com/p/wwwsqldesigner/ -->
 <!-- Active URL: https://socrates.devbootcamp.com/sql -->
@@ -43,7 +40,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="484" y="143" name="posts">
+<table x="459" y="136" name="posts">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -55,7 +52,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="648" y="140" name="taggings">
+<table x="636" y="136" name="taggings">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -71,7 +68,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="835" y="141" name="tags">
+<table x="823" y="133" name="tags">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -79,11 +76,11 @@
 <part>id</part>
 </key>
 </table>
-<table x="280" y="250" name="followings">
+<table x="52" y="211" name="followings">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="poster_id" null="1" autoincrement="0">
+<row name="followee_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="users" row="id" />
 </row>
@@ -96,4 +93,3 @@
 </key>
 </table>
 </sql>
-```
