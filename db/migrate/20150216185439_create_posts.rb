@@ -1,6 +1,6 @@
 class CreatePosts < ActiveRecord::Migration
   def change
-    create_tables :posts do |t|
+    create_table :posts do |t|
       t.string     :content
       t.references :poster
 
@@ -8,3 +8,4 @@ class CreatePosts < ActiveRecord::Migration
     end
   end
 end
+

@@ -1,6 +1,6 @@
 class CreateTaggings < ActiveRecord::Migration
   def change
-    create_tables :taggings do |t|
+    create_table :taggings do |t|
       t.references :post
       t.references :tag
 
