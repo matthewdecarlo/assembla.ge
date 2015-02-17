@@ -14,4 +14,10 @@ class User < ActiveRecord::Base
 
     validates_associated :originators, :followers
 
+    validates :username, uniqueness: true
+    validates :email,    uniqueness: true
+
+  def self.authenticate(params)
+    find_by(username: params[:user][:username]).try(:authenticate, params[:user][:password])
+  end
 end
