@@ -1,3 +1,6 @@
+#############################################################
+#### Basics for Authentication NOT RESTful (no need)     ####
+#############################################################
 get '/auth/login' do 
   erb :'auth/login'
 end
