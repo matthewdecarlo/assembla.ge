@@ -44,13 +44,18 @@ get '/users/:user_id/posts/:id/edit' do
   erb :'posts/edit'
 end
 
-put '/users/:post_id/posts/:id' do
+put '/users/:user_id/posts/:id' do
   post = Post.find(params[:id])
 
   if post.update(content: params[:content])
-    redirect "/users/#{params[:post_id]}/posts/#{params[:id]}"
+    redirect "/users/#{params[:user_id]}/posts/#{params[:id]}"
   else
-    redirect "/users/#{params[:post_id]}/posts/#{params[:id]}/edit"
+    redirect "/users/#{params[:user_id]}/posts/#{params[:id]}/edit"
   end
 end
 
+delete '/users/:user_id/posts/:id' do
+  post = Post.find(params[:id])
+  post.destroy
+  redirect '/users/:user_id/posts'
+end
