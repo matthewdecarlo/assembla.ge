@@ -1,10 +1,16 @@
 #############################################################
 #### Basics for User RESTful CRUD                        ####
 #############################################################
-before '/users/:id/*' do
+before '/users/:id/edit' do
 	unless current_user.id == params[:id].to_i
 		redirect "/users/#{params[:id]}"
 	end
+end
+
+before '/users/:id/delete' do
+  unless current_user.id == params[:id].to_i
+    redirect "/users/#{params[:id]}"
+  end
 end
 
 get '/users/new' do
@@ -43,7 +49,3 @@ delete '/users/:id' do
 	current_user.destroy
 	redirect '/auth/logout'
 end
-
-#############################################################
-####                                                     ####
-#############################################################

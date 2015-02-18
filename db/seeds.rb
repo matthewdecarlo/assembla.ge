@@ -20,6 +20,8 @@ Following.create!(originator_id: 3, follower_id: 4)
 
 Post.create!(poster_id: 1, content: "#SomethingAwesome is Coming...")
 
+100.times {Post.create!(poster_id: rand(1..5), content: Faker::Lorem.paragraph)}
+
 Tagging.create!(post_id: 1, tag_id: 1)
 
 Tag.create(content: "SomethingAwesome")
