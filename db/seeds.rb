@@ -22,6 +22,8 @@ Post.create!(poster_id: 1, content: "#SomethingAwesome is Coming...")
 
 100.times {Post.create!(poster_id: rand(1..5), content: Faker::Lorem.paragraph)}
 
-Tagging.create!(post_id: 1, tag_id: 1)
+60.times { Tagging.create!(post_id: rand(1..100), tag_id: rand(1..50)) }
 
 Tag.create(content: "SomethingAwesome")
+
+5.times {Tag.create(content: Faker::Lorem.word)}

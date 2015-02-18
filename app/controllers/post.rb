@@ -32,11 +32,12 @@ get '/users/:id/posts' do
   @user = User.find(params[:id])
   @posts = @user.posts
   
-  erb :'/posts/show'
+  erb :'/posts/index'
 end
 
 # create
 get '/users/:id/posts/new' do
+  @tags = Tag.all
   erb :'/posts/new'
 end
 
@@ -44,7 +45,8 @@ post '/users/:id/posts' do
   @post = Post.new(poster_id: current_user.id, content: params[:content])
 
   if @post.save
-    p @post.id
+    @post.id
+    params[:tags].each { |id| Tagging.create(post_id: @post.id, tag_id: id)}
     redirect "/users/:id/posts/#{@post.id}"
   else
     redirect "/users/:id/posts/new"
@@ -55,7 +57,7 @@ end
 get '/users/:user_id/posts/:id' do
   @user = User.find(params[:user_id])
   @post = Post.find(params[:id])
-  erb :'/posts/post'
+  erb :'/posts/show'
 end
 
 #edit

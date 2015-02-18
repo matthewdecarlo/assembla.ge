@@ -1,12 +1,13 @@
-<h1><%= @user.name %>'s Posts</h1>
+<h1><%= @user.name %></h1>
+<h2><%= @post.created_at.strftime("%d %B %Y") %></h2>
+<p><%= @post.content%></p>
 
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <a href="/users/<%= @user.id %>/posts/<%= post.id%>">
-        <%= post.content %>
-      </a>
-    </li>
-  <% end %>
-</ul>
+<% @post.tags.each do |tag|%>
+  #<%= tag.content %> 
+<% end %>
 
+<% if current_user.id == @user.id %>
+  <a href="/users/<%= @user.id %>/posts/<%= @post.id %>/edit">
+  Edit
+  </a>
+<% end %>
