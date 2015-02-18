@@ -1,6 +1,8 @@
 require 'faker'
 
-User.create(name: "Miriam", username: "m", email: "mm@mm.com", password:"123")
+User.create(name: "Miriam Moore", username: "mmdesign007", email: "miriamsusanmoore@mm.com", password:"123")
+User.create(name: "Matthew Who", username: "matthewwho", email: "matthewwho@me.com", password:"123")
+User.create(name: "Test User", username: "test", email: "test@test.com", password:"123")
 
 5.times do
   User.create!(name: Faker::Name.name,
