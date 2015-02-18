@@ -7,6 +7,12 @@
   <input type="submit" value="Complete Edit">
 </form>
 
+
+  <% @tags.each do |tag| %>
+    <input type="checkbox" name="tags[]" value="<%=tag.id %>" <% if @post.tags.ids.include?(tag.id)  %>checked<% end %>>
+    <%= tag.content %><br>
+  <% end %>
+
 <form action="/users/<%= current_user.id %>/posts/<%= @post.id %>" method="POST">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete Post">

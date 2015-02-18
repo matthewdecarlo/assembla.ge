@@ -55,16 +55,20 @@ end
 
 #show individual
 get '/users/:user_id/posts/:id' do
-  @user = User.find(params[:user_id])
-  @post = Post.find(params[:id])
-  erb :'/posts/show'
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:id])
+    erb :'/posts/show'
 end
 
 #edit
 get '/users/:user_id/posts/:id/edit' do
   @post = Post.find(params[:id])
+  @tags = Tag.all
   erb :'posts/edit'
 end
+
+
+
 
 put '/users/:user_id/posts/:id' do
   post = Post.find(params[:id])
