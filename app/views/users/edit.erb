@@ -1,7 +1,7 @@
 <h1>Welcome to Assemblage</h1>
 <h2>You may edit as you please;</h2>
 
-<form action="/users/<%= current_user.id %>/edit" method="POST">
+<form action="/users/<%= current_user.id %>" method="POST">
 	<input type="hidden" name="_method" value="put">
   <input type="password" name="[user][password]" placeholder="password">
   <input type="email" name="[user][email]" placeholder="email" value="<%= current_user.email %>">
@@ -9,3 +9,7 @@
   <input type="submit" value="Edit">
 </form>
 
+<form action="/users/<%= current_user.id %>" method="POST">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Delete Account">
+</form>

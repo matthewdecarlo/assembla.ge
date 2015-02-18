@@ -26,17 +26,19 @@ get '/users/:id/edit' do
   erb :'users/edit'
 end
 
-put '/users/:id/edit' do
-	if @contact.update(params["contact"])
-    redirect "/users/#{current_user.id}"
-  else
-    redirect "/users/#{current_user.id}/edit"
-  end
-	
+put '/users/:id' do	
+	# p User.update(current_user.id, sanitize_params(params))
+	# if 
+	# 	p current_user.username
+ #    redirect "/users/#{current_user.id}"
+ #  else
+ #    redirect "/users/#{current_user.id}/edit"
+ #  end
 end
 
-delete '/users/:id/delete' do
-
+delete '/users/:id' do
+	current_user.destroy
+	redirect '/auth/logout'
 end
 
 def ensure_login
