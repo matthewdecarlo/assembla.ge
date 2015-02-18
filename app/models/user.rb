@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
     has_many :originators, through: :following_links, source: :originator
     has_many :followers,   through: :follower_links, source: :follower
 
-    validates_associated :originators, :followers
+    validates_associated :follower_links, :following_links
 
     validates :username, uniqueness: true
     validates :email,    uniqueness: true

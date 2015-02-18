@@ -24,6 +24,10 @@
   </div>
 
   <% if current_user%>
+    <a href="/users/<%= current_user.id %>">
+        <button>Profile</button>
+    </a>
+
     <a href="/auth/logout">
       <button>Log Out</button>
     </a>
@@ -31,6 +35,7 @@
     <a href="/auth/login">
       <button>Login</button>
     </a>
+    
     <a href="/users/new">
       <button>Sign Up</button>
     </a>

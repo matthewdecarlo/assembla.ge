@@ -6,7 +6,6 @@ get '/auth/login' do
 end
 
 post '/auth/login' do
-	p User.authenticate(params) 
   if user = User.authenticate(params) 
     session[:user_id] = user.id
     redirect "/users/#{user.id}"
