@@ -68,9 +68,8 @@ get '/users/:user_id/posts/:id/edit' do
 end
 
 
-
-
 put '/users/:user_id/posts/:id' do
+
   post = Post.find(params[:id])
 
   if post.update(content: params[:content])
